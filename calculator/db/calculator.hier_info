@@ -1,0 +1,3573 @@
+|DE10_LITE_Golden_Top
+ADC_CLK_10 => ADC_CLK_10.IN2
+MAX10_CLK1_50 => MAX10_CLK1_50.IN3
+MAX10_CLK2_50 => ~NO_FANOUT~
+HEX0S[0] <= HEXDRV:hex0s.segments
+HEX0S[1] <= HEXDRV:hex0s.segments
+HEX0S[2] <= HEXDRV:hex0s.segments
+HEX0S[3] <= HEXDRV:hex0s.segments
+HEX0S[4] <= HEXDRV:hex0s.segments
+HEX0S[5] <= HEXDRV:hex0s.segments
+HEX0S[6] <= HEXDRV:hex0s.segments
+HEX1S[0] <= HEXDRV:hex1s.segments
+HEX1S[1] <= HEXDRV:hex1s.segments
+HEX1S[2] <= HEXDRV:hex1s.segments
+HEX1S[3] <= HEXDRV:hex1s.segments
+HEX1S[4] <= HEXDRV:hex1s.segments
+HEX1S[5] <= HEXDRV:hex1s.segments
+HEX1S[6] <= HEXDRV:hex1s.segments
+HEX2S[0] <= HEXDRV:hex2s.segments
+HEX2S[1] <= HEXDRV:hex2s.segments
+HEX2S[2] <= HEXDRV:hex2s.segments
+HEX2S[3] <= HEXDRV:hex2s.segments
+HEX2S[4] <= HEXDRV:hex2s.segments
+HEX2S[5] <= HEXDRV:hex2s.segments
+HEX2S[6] <= HEXDRV:hex2s.segments
+HEX3S[0] <= HEXDRV:hex3s.segments
+HEX3S[1] <= HEXDRV:hex3s.segments
+HEX3S[2] <= HEXDRV:hex3s.segments
+HEX3S[3] <= HEXDRV:hex3s.segments
+HEX3S[4] <= HEXDRV:hex3s.segments
+HEX3S[5] <= HEXDRV:hex3s.segments
+HEX3S[6] <= HEXDRV:hex3s.segments
+HEX4S[0] <= HEXDRV:hex4s.segments
+HEX4S[1] <= HEXDRV:hex4s.segments
+HEX4S[2] <= HEXDRV:hex4s.segments
+HEX4S[3] <= HEXDRV:hex4s.segments
+HEX4S[4] <= HEXDRV:hex4s.segments
+HEX4S[5] <= HEXDRV:hex4s.segments
+HEX4S[6] <= HEXDRV:hex4s.segments
+HEX5S[0] <= HEXDRV:hex5s.segments
+HEX5S[1] <= HEXDRV:hex5s.segments
+HEX5S[2] <= HEXDRV:hex5s.segments
+HEX5S[3] <= HEXDRV:hex5s.segments
+HEX5S[4] <= HEXDRV:hex5s.segments
+HEX5S[5] <= HEXDRV:hex5s.segments
+HEX5S[6] <= HEXDRV:hex5s.segments
+HEXdp[0] <= <VCC>
+HEXdp[1] <= <VCC>
+HEXdp[2] <= out_status[26].DB_MAX_OUTPUT_PORT_TYPE
+HEXdp[3] <= <VCC>
+HEXdp[4] <= <VCC>
+HEXdp[5] <= <VCC>
+KEY[0] => _.IN1
+KEY[1] => _.IN1
+LEDR[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= state[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= state[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+SW[0] => SW[0].IN3
+SW[1] => SW[1].IN7
+SW[2] => SW[2].IN12
+SW[3] => SW[3].IN12
+SW[4] => SW[4].IN12
+SW[5] => SW[5].IN12
+SW[6] => SW[6].IN6
+SW[7] => SW[7].IN6
+SW[8] => SW[8].IN9
+SW[9] => SW[9].IN9
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul
+factor1[0] => factor1[0].IN1
+factor1[1] => factor1[1].IN1
+factor1[2] => factor1[2].IN1
+factor1[3] => factor1[3].IN1
+factor2[0] => factor2[0].IN1
+factor2[1] => factor2[1].IN1
+factor2[2] => factor2[2].IN1
+factor2[3] => factor2[3].IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac1|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:fac2|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+addend2[4] => add2.IN0
+addend2[5] => add2.IN0
+addend2[6] => add2.IN0
+addend2[7] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+out[4] <= full_adder:fa5.sum
+out[5] <= full_adder:fa6.sum
+out[6] <= full_adder:fa7.sum
+out[7] <= full_adder:fa8.sum
+carry_out <= full_adder:fa8.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa5
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa5|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa6
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa6|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa7
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa7|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa8
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa8|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div
+dividend[0] => dividend[0].IN1
+dividend[1] => dividend[1].IN1
+dividend[2] => dividend[2].IN1
+dividend[3] => dividend[3].IN1
+divisor[0] => divisor[0].IN1
+divisor[1] => divisor[1].IN1
+divisor[2] => divisor[2].IN1
+divisor[3] => divisor[3].IN1
+quotient[0] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[1] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[2] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[3] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[4] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[5] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[6] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[7] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+remainder[0] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[1] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[2] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[3] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[4] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[5] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[6] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[7] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+zero_div <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+addend2[4] => add2.IN0
+addend2[5] => add2.IN0
+addend2[6] => add2.IN0
+addend2[7] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+out[4] <= full_adder:fa5.sum
+out[5] <= full_adder:fa6.sum
+out[6] <= full_adder:fa7.sum
+out[7] <= full_adder:fa8.sum
+carry_out <= full_adder:fa8.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa5
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa5|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa6
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa6|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa7
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa7|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa8
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa8|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+addend2[4] => add2.IN0
+addend2[5] => add2.IN0
+addend2[6] => add2.IN0
+addend2[7] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+out[4] <= full_adder:fa5.sum
+out[5] <= full_adder:fa6.sum
+out[6] <= full_adder:fa7.sum
+out[7] <= full_adder:fa8.sum
+carry_out <= full_adder:fa8.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa5
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa5|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa6
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa6|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa7
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa7|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa8
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa8|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod
+in[0] => in[0].IN1
+in[1] => in[1].IN1
+in[2] => in[2].IN1
+in[3] => in[3].IN1
+mod[0] => mod[0].IN1
+mod[1] => mod[1].IN1
+mod[2] => mod[2].IN1
+mod[3] => mod[3].IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div
+dividend[0] => dividend[0].IN1
+dividend[1] => dividend[1].IN1
+dividend[2] => dividend[2].IN1
+dividend[3] => dividend[3].IN1
+divisor[0] => divisor[0].IN1
+divisor[1] => divisor[1].IN1
+divisor[2] => divisor[2].IN1
+divisor[3] => divisor[3].IN1
+quotient[0] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[1] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[2] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[3] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[4] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[5] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[6] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[7] <= quotient.DB_MAX_OUTPUT_PORT_TYPE
+remainder[0] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[1] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[2] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[3] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[4] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[5] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[6] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+remainder[7] <= remainder.DB_MAX_OUTPUT_PORT_TYPE
+zero_div <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divd|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|four_bit_adder_substractor:divr|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+addend2[4] => add2.IN0
+addend2[5] => add2.IN0
+addend2[6] => add2.IN0
+addend2[7] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+out[4] <= full_adder:fa5.sum
+out[5] <= full_adder:fa6.sum
+out[6] <= full_adder:fa7.sum
+out[7] <= full_adder:fa8.sum
+carry_out <= full_adder:fa8.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa5
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa5|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa6
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa6|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa7
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa7|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa8
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa8|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+addend2[4] => add2.IN0
+addend2[5] => add2.IN0
+addend2[6] => add2.IN0
+addend2[7] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+out[4] <= full_adder:fa5.sum
+out[5] <= full_adder:fa6.sum
+out[6] <= full_adder:fa7.sum
+out[7] <= full_adder:fa8.sum
+carry_out <= full_adder:fa8.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa5
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa5|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa6
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa6|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa7
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa7|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa8
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa8|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_shifter:sh
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAA
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh
+inp[0] => data.DATAB
+inp[1] => data.DATAB
+inp[2] => data.DATAB
+inp[3] => data.DATAB
+dir => dir.IN1
+cnt[0] => counter.DATAB
+cnt[1] => counter.DATAB
+clk => START.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => out_reg[0].CLK
+clk => out_reg[1].CLK
+clk => out_reg[2].CLK
+clk => out_reg[3].CLK
+rst => START.PRESET
+rst => counter[0].ACLR
+rst => counter[1].ACLR
+rst => counter[2].ACLR
+rst => counter[3].ACLR
+rst => data[0].ACLR
+rst => data[1].ACLR
+rst => data[2].ACLR
+rst => data[3].ACLR
+rst => out_reg[0].ACLR
+rst => out_reg[1].ACLR
+rst => out_reg[2].ACLR
+rst => out_reg[3].ACLR
+out[0] <= out_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_shifter:sh
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAA
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_shifter:fsh|four_bit_adder_substractor:sub|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_comparator:cmp
+operand1[0] => temp_xnor[0].IN0
+operand1[0] => temp_A[0].IN0
+operand1[0] => temp_B[0].IN0
+operand1[1] => temp_xnor[1].IN0
+operand1[1] => temp_A[1].IN0
+operand1[1] => temp_B[1].IN0
+operand1[2] => temp_xnor[2].IN0
+operand1[2] => temp_A[2].IN0
+operand1[2] => temp_B[2].IN0
+operand1[3] => temp_xnor[3].IN0
+operand1[3] => temp_A[3].IN0
+operand1[3] => temp_B[3].IN0
+operand2[0] => temp_xnor[0].IN1
+operand2[0] => temp_B[0].IN1
+operand2[0] => temp_A[0].IN1
+operand2[1] => temp_xnor[1].IN1
+operand2[1] => temp_B[1].IN1
+operand2[1] => temp_A[1].IN1
+operand2[2] => temp_xnor[2].IN1
+operand2[2] => temp_B[2].IN1
+operand2[2] => temp_A[2].IN1
+operand2[3] => temp_xnor[3].IN1
+operand2[3] => temp_B[3].IN1
+operand2[3] => temp_A[3].IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
+equal <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+less <= less.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_cascading_comparator:ccpm
+op1[0] => op1[0].IN1
+op1[1] => op1[1].IN1
+op1[2] => op1[2].IN1
+op1[3] => op1[3].IN1
+op2[0] => op2[0].IN1
+op2[1] => op2[1].IN1
+op2[2] => op2[2].IN1
+op2[3] => op2[3].IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
+equal <= equal.DB_MAX_OUTPUT_PORT_TYPE
+less <= less.DB_MAX_OUTPUT_PORT_TYPE
+prev_greater => greater.IN1
+prev_greater => less.IN1
+prev_equal => equal.IN1
+prev_less => less.IN1
+prev_less => greater.IN1
+
+
+|DE10_LITE_Golden_Top|four_bit_cascading_comparator:ccpm|four_bit_comparator:comp
+operand1[0] => temp_xnor[0].IN0
+operand1[0] => temp_A[0].IN0
+operand1[0] => temp_B[0].IN0
+operand1[1] => temp_xnor[1].IN0
+operand1[1] => temp_A[1].IN0
+operand1[1] => temp_B[1].IN0
+operand1[2] => temp_xnor[2].IN0
+operand1[2] => temp_A[2].IN0
+operand1[2] => temp_B[2].IN0
+operand1[3] => temp_xnor[3].IN0
+operand1[3] => temp_A[3].IN0
+operand1[3] => temp_B[3].IN0
+operand2[0] => temp_xnor[0].IN1
+operand2[0] => temp_B[0].IN1
+operand2[0] => temp_A[0].IN1
+operand2[1] => temp_xnor[1].IN1
+operand2[1] => temp_B[1].IN1
+operand2[1] => temp_A[1].IN1
+operand2[2] => temp_xnor[2].IN1
+operand2[2] => temp_B[2].IN1
+operand2[2] => temp_A[2].IN1
+operand2[3] => temp_xnor[3].IN1
+operand2[3] => temp_B[3].IN1
+operand2[3] => temp_A[3].IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
+equal <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+less <= less.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_arithmetical_shifter:ash
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAA
+in[3] => out.DATAA
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash
+inp[0] => data.DATAB
+inp[1] => data.DATAB
+inp[2] => data.DATAB
+inp[3] => data.DATAB
+dir => dir.IN1
+cnt[0] => counter.DATAB
+cnt[1] => counter.DATAB
+clk => START.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => out_reg[0].CLK
+clk => out_reg[1].CLK
+clk => out_reg[2].CLK
+clk => out_reg[3].CLK
+rst => START.PRESET
+rst => counter[0].ACLR
+rst => counter[1].ACLR
+rst => counter[2].ACLR
+rst => counter[3].ACLR
+rst => data[0].ACLR
+rst => data[1].ACLR
+rst => data[2].ACLR
+rst => data[3].ACLR
+rst => out_reg[0].ACLR
+rst => out_reg[1].ACLR
+rst => out_reg[2].ACLR
+rst => out_reg[3].ACLR
+out[0] <= out_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_arithmetical_shifter:sh
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAA
+in[3] => out.DATAA
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_rotator:rsh
+in[0] => out.DATAA
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAA
+in[3] => out.DATAB
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh
+inp[0] => data.DATAB
+inp[1] => data.DATAB
+inp[2] => data.DATAB
+inp[3] => data.DATAB
+dir => dir.IN1
+cnt[0] => counter.DATAB
+cnt[1] => counter.DATAB
+clk => START.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => out_reg[0].CLK
+clk => out_reg[1].CLK
+clk => out_reg[2].CLK
+clk => out_reg[3].CLK
+rst => START.PRESET
+rst => counter[0].ACLR
+rst => counter[1].ACLR
+rst => counter[2].ACLR
+rst => counter[3].ACLR
+rst => data[0].ACLR
+rst => data[1].ACLR
+rst => data[2].ACLR
+rst => data[3].ACLR
+rst => out_reg[0].ACLR
+rst => out_reg[1].ACLR
+rst => out_reg[2].ACLR
+rst => out_reg[3].ACLR
+out[0] <= out_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_rotator:sh
+in[0] => out.DATAA
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAA
+in[3] => out.DATAB
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|four_bit_adder_substractor:sub|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:inc|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend2[0] => add2.IN0
+addend2[1] => add2.IN0
+addend2[2] => add2.IN0
+addend2[3] => add2.IN0
+sign => sign.IN1
+out[0] <= full_adder:fa1.sum
+out[1] <= full_adder:fa2.sum
+out[2] <= full_adder:fa3.sum
+out[3] <= full_adder:fa4.sum
+carry_out <= full_adder:fa4.c_out
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa1
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa1|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa2
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa2|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa3
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa3|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa4
+b1 => b1.IN1
+b2 => b2.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa4|half_adder:ha
+b1 => sum.IN0
+b1 => c_out.IN0
+b2 => sum.IN1
+b2 => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_comparator:comp_inc
+operand1[0] => temp_xnor[0].IN0
+operand1[0] => temp_A[0].IN0
+operand1[0] => temp_B[0].IN0
+operand1[1] => temp_xnor[1].IN0
+operand1[1] => temp_A[1].IN0
+operand1[1] => temp_B[1].IN0
+operand1[2] => temp_xnor[2].IN0
+operand1[2] => temp_A[2].IN0
+operand1[2] => temp_B[2].IN0
+operand1[3] => temp_xnor[3].IN0
+operand1[3] => temp_A[3].IN0
+operand1[3] => temp_B[3].IN0
+operand2[0] => temp_xnor[0].IN1
+operand2[0] => temp_B[0].IN1
+operand2[0] => temp_A[0].IN1
+operand2[1] => temp_xnor[1].IN1
+operand2[1] => temp_B[1].IN1
+operand2[1] => temp_A[1].IN1
+operand2[2] => temp_xnor[2].IN1
+operand2[2] => temp_B[2].IN1
+operand2[2] => temp_A[2].IN1
+operand2[3] => temp_xnor[3].IN1
+operand2[3] => temp_B[3].IN1
+operand2[3] => temp_A[3].IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
+equal <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+less <= less.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|four_bit_comparator:comp_dec
+operand1[0] => temp_xnor[0].IN0
+operand1[0] => temp_A[0].IN0
+operand1[0] => temp_B[0].IN0
+operand1[1] => temp_xnor[1].IN0
+operand1[1] => temp_A[1].IN0
+operand1[1] => temp_B[1].IN0
+operand1[2] => temp_xnor[2].IN0
+operand1[2] => temp_A[2].IN0
+operand1[2] => temp_B[2].IN0
+operand1[3] => temp_xnor[3].IN0
+operand1[3] => temp_A[3].IN0
+operand1[3] => temp_B[3].IN0
+operand2[0] => temp_xnor[0].IN1
+operand2[0] => temp_B[0].IN1
+operand2[0] => temp_A[0].IN1
+operand2[1] => temp_xnor[1].IN1
+operand2[1] => temp_B[1].IN1
+operand2[1] => temp_A[1].IN1
+operand2[2] => temp_xnor[2].IN1
+operand2[2] => temp_B[2].IN1
+operand2[2] => temp_A[2].IN1
+operand2[3] => temp_xnor[3].IN1
+operand2[3] => temp_B[3].IN1
+operand2[3] => temp_A[3].IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
+equal <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+less <= less.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|HEXDRV:hex0s
+switch[0] => Decoder0.IN3
+switch[1] => Decoder0.IN2
+switch[2] => Decoder0.IN1
+switch[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <VCC>
+
+
+|DE10_LITE_Golden_Top|HEXDRV:hex1s
+switch[0] => Decoder0.IN3
+switch[1] => Decoder0.IN2
+switch[2] => Decoder0.IN1
+switch[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <VCC>
+
+
+|DE10_LITE_Golden_Top|HEXDRV:hex2s
+switch[0] => Decoder0.IN3
+switch[1] => Decoder0.IN2
+switch[2] => Decoder0.IN1
+switch[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <VCC>
+
+
+|DE10_LITE_Golden_Top|HEXDRV:hex3s
+switch[0] => Decoder0.IN3
+switch[1] => Decoder0.IN2
+switch[2] => Decoder0.IN1
+switch[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <VCC>
+
+
+|DE10_LITE_Golden_Top|HEXDRV:hex4s
+switch[0] => Decoder0.IN3
+switch[1] => Decoder0.IN2
+switch[2] => Decoder0.IN1
+switch[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <VCC>
+
+
+|DE10_LITE_Golden_Top|HEXDRV:hex5s
+switch[0] => Decoder0.IN3
+switch[1] => Decoder0.IN2
+switch[2] => Decoder0.IN1
+switch[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <VCC>
+
+
+|DE10_LITE_Golden_Top|button_debouncer:db1
+clk => out~reg0.CLK
+clk => fall~reg0.CLK
+clk => rise~reg0.CLK
+clk => edj~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+in => w_edj.IN1
+in => w_rise.IN1
+in => w_fall.IN1
+in => out~reg0.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+edj <= edj~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rise <= rise~reg0.DB_MAX_OUTPUT_PORT_TYPE
+fall <= fall~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_LITE_Golden_Top|button_debouncer:db2
+clk => out~reg0.CLK
+clk => fall~reg0.CLK
+clk => rise~reg0.CLK
+clk => edj~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+in => w_edj.IN1
+in => w_rise.IN1
+in => w_fall.IN1
+in => out~reg0.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+edj <= edj~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rise <= rise~reg0.DB_MAX_OUTPUT_PORT_TYPE
+fall <= fall~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

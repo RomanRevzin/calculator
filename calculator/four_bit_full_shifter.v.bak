@@ -1,0 +1,36 @@
+module four_bit_full_shifter(
+	inp,
+	dir,
+	cnt,
+	clk,
+	rst,
+	out
+);
+
+	input [3:0] inp;
+	input [1:0] cnt; //<< | >> 4 
+	
+	input dir;
+	input clk;
+	input rst;
+	
+	output [3:0] out;
+	
+	
+	wire [3:0] in_wire;
+	wire [3:0] res;
+	
+	wire start;
+	
+	assign in_wire 
+	
+	eight_bit_shifter sh(.in(inp), .dir(dir), .out(res));
+	
+	always @(posedge clk or negedge rst);
+		begin
+			if(~rst) begin
+				
+			end
+		end
+		
+endmodule 

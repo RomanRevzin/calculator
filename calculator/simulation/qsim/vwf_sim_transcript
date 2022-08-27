@@ -1,0 +1,136 @@
+Determining the location of the ModelSim executable...
+
+Using: c:/intelfpga_lite/17.0/modelsim_ase/win32aloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off calculator -c calculator --vector_source="E:/quartus_projects/intel_comp/calculator/button_debouncer.vwf" --testbench_file="E:/quartus_projects/intel_comp/calculator/simulation/qsim/button_debouncer.vwf.vt"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Intel and sold by Intel or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Sun May 15 14:49:52 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off calculator -c calculator --vector_source=E:/quartus_projects/intel_comp/calculator/button_debouncer.vwf --testbench_file=E:/quartus_projects/intel_comp/calculator/simulation/qsim/button_debouncer.vwf.vt
+Info (119006): Selected device 10M50DAF484C7G for design "calculator"
+
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="E:/quartus_projects/intel_comp/calculator/simulation/qsim/" calculator -c calculator
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Intel and sold by Intel or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Sun May 15 14:49:53 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=E:/quartus_projects/intel_comp/calculator/simulation/qsim/ calculator -c calculator
+Info (119006): Selected device 10M50DAF484C7G for design "calculator"
+Info (204019): Generated file calculator.vo in folder "E:/quartus_projects/intel_comp/calculator/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Sun May 15 14:49:54 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+E:/quartus_projects/intel_comp/calculator/simulation/qsim/calculator.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+c:/intelfpga_lite/17.0/modelsim_ase/win32aloem//vsim -c -do calculator.do
+
+Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+# do calculator.do
+
+# ** Warning: (vlib-34) Library already exists at "work".
+
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:49:55 on May 15,2022
+# vlog -work work calculator.vo 
+# -- Compiling module button_debouncer
+# 
+# Top level modules:
+# 	button_debouncer
+# End time: 14:49:55 on May 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:49:55 on May 15,2022
+# vlog -work work button_debouncer.vwf.vt 
+# -- Compiling module button_debouncer_vlg_vec_tst
+# 
+# Top level modules:
+# 	button_debouncer_vlg_vec_tst
+# End time: 14:49:55 on May 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.button_debouncer_vlg_vec_tst 
+# Start time: 14:49:55 on May 15,2022
+# Loading work.button_debouncer_vlg_vec_tst
+# Loading work.button_debouncer
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# after#25
+# ** Note: $finish    : button_debouncer.vwf.vt(53)
+#    Time: 1 us  Iteration: 0  Instance: /button_debouncer_vlg_vec_tst
+# End time: 14:49:56 on May 15,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading E:/quartus_projects/intel_comp/calculator/button_debouncer.vwf...
+
+Reading E:/quartus_projects/intel_comp/calculator/simulation/qsim/calculator.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to E:/quartus_projects/intel_comp/calculator/simulation/qsim/calculator_20220515144956.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

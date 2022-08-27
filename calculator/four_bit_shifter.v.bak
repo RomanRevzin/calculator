@@ -1,0 +1,19 @@
+module four_bit_shifter(
+	in,
+	dir,
+	out
+);
+
+	input  [7:0]  in;
+	input 		 dir;
+	
+	output [7:0] out;
+	
+	assign out = {
+						in[2] & ~dir,
+						in[3] & dir | in[1] & ~dir,
+						in[2] & dir | in[0] & ~dir,
+						in[1] & dir
+					 };
+
+endmodule 

@@ -1,0 +1,50 @@
+Quartus Prime Archive log --	E:/quartus_projects/intel_comp/calculator/calculator.qarlog
+
+Archive:	E:/quartus_projects/intel_comp/calculator/calculator.qar
+Date:		Sun May 15 19:06:51 2022
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+E:/quartus_projects/intel_comp/calculator/DE10-LitePin.tcl
+E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v
+E:/quartus_projects/intel_comp/calculator/HEXDRV.v
+E:/quartus_projects/intel_comp/calculator/HEXDRV.vwf
+E:/quartus_projects/intel_comp/calculator/button_debouncer.v
+E:/quartus_projects/intel_comp/calculator/button_debouncer.vwf
+E:/quartus_projects/intel_comp/calculator/calculator.qpf
+E:/quartus_projects/intel_comp/calculator/calculator.qsf
+E:/quartus_projects/intel_comp/calculator/eight_bit_adder_substractor.v
+E:/quartus_projects/intel_comp/calculator/eight_bit_adder_substractor.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_adder_substractor.v
+E:/quartus_projects/intel_comp/calculator/four_bit_adder_substractor.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_arithmetical_shifter.v
+E:/quartus_projects/intel_comp/calculator/four_bit_arithmetical_shifter.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_cascading_comparator.v
+E:/quartus_projects/intel_comp/calculator/four_bit_cascading_comparator.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_comparator.v
+E:/quartus_projects/intel_comp/calculator/four_bit_comparator.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_divisor.v
+E:/quartus_projects/intel_comp/calculator/four_bit_divisor.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_full_arithmetical_shifter.v
+E:/quartus_projects/intel_comp/calculator/four_bit_full_arithmetical_shifter.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_full_rotator.v
+E:/quartus_projects/intel_comp/calculator/four_bit_full_rotator.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_full_shifter.v
+E:/quartus_projects/intel_comp/calculator/four_bit_full_shifter.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_modulus.v
+E:/quartus_projects/intel_comp/calculator/four_bit_modulus.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_multiplier.v
+E:/quartus_projects/intel_comp/calculator/four_bit_multiplier.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_rotator.v
+E:/quartus_projects/intel_comp/calculator/four_bit_rotator.vwf
+E:/quartus_projects/intel_comp/calculator/four_bit_shifter.v
+E:/quartus_projects/intel_comp/calculator/four_bit_shifter.vwf
+E:/quartus_projects/intel_comp/calculator/full_adder.v
+E:/quartus_projects/intel_comp/calculator/full_adder.vwf
+E:/quartus_projects/intel_comp/calculator/half_adder.v
+E:/quartus_projects/intel_comp/calculator/half_adder.vwf
+c:/intelfpga_lite/17.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 39 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

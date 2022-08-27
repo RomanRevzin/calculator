@@ -1,0 +1,114 @@
+Archive Project report for calculator
+Sun May 15 19:06:51 2022
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Sun May 15 19:06:51 2022 ;
+; Revision Name          ; calculator                            ;
+; Top-level Entity Name  ; DE10_LITE_Golden_Top                  ;
+; Family                 ; MAX 10                                ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory E:/quartus_projects/intel_comp/calculator/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'E:/quartus_projects/intel_comp/calculator/calculator.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'calculator.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Sun May 15 19:06:51 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++--------------------------------------------------------------+
+; Files Archived                                               ;
++--------------------------------------------------------------+
+; File Name                                                    ;
++--------------------------------------------------------------+
+; button_debouncer.v                                           ;
+; button_debouncer.vwf                                         ;
+; c:/intelfpga_lite/17.0/quartus/bin64/assignment_defaults.qdf ;
+; calculator.qpf                                               ;
+; calculator.qsf                                               ;
+; DE10-LitePin.tcl                                             ;
+; DE10_LITE_Golden_Top.v                                       ;
+; eight_bit_adder_substractor.v                                ;
+; eight_bit_adder_substractor.vwf                              ;
+; four_bit_adder_substractor.v                                 ;
+; four_bit_adder_substractor.vwf                               ;
+; four_bit_arithmetical_shifter.v                              ;
+; four_bit_arithmetical_shifter.vwf                            ;
+; four_bit_cascading_comparator.v                              ;
+; four_bit_cascading_comparator.vwf                            ;
+; four_bit_comparator.v                                        ;
+; four_bit_comparator.vwf                                      ;
+; four_bit_divisor.v                                           ;
+; four_bit_divisor.vwf                                         ;
+; four_bit_full_arithmetical_shifter.v                         ;
+; four_bit_full_arithmetical_shifter.vwf                       ;
+; four_bit_full_rotator.v                                      ;
+; four_bit_full_rotator.vwf                                    ;
+; four_bit_full_shifter.v                                      ;
+; four_bit_full_shifter.vwf                                    ;
+; four_bit_modulus.v                                           ;
+; four_bit_modulus.vwf                                         ;
+; four_bit_multiplier.v                                        ;
+; four_bit_multiplier.vwf                                      ;
+; four_bit_rotator.v                                           ;
+; four_bit_rotator.vwf                                         ;
+; four_bit_shifter.v                                           ;
+; four_bit_shifter.vwf                                         ;
+; full_adder.v                                                 ;
+; full_adder.vwf                                               ;
+; half_adder.v                                                 ;
+; half_adder.vwf                                               ;
+; HEXDRV.v                                                     ;
+; HEXDRV.vwf                                                   ;
++--------------------------------------------------------------+
+
+

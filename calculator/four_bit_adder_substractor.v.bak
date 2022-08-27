@@ -1,0 +1,25 @@
+module four_bit_adder_substractor(
+	addend1,
+	addend2,
+	sign,
+	out,
+	c_out
+);
+
+	input  [3:0] 	 b1;
+	input  [3:0] 	 b2;
+	input 		  sign;
+	
+	output [3:0]   sum;
+	output [3:0] c_out;
+	
+	wire ha_sum;
+	wire ha_c_out;
+	
+	full_adder fa1(.b1(b1), .b2(b2), .sum(ha_sum), .c_out(ha_c_out));
+	
+	assign sum 	 = ha_sum  ^ c_in;
+	
+	assign c_out = (ha_sum & c_in) | ha_c_out;
+
+endmodule 

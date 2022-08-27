@@ -1,0 +1,25 @@
+module four_bit_comparator(
+	operand1,
+	operand2,
+	greater,
+	equal,
+	less
+);
+
+	input [3:0] operand1;
+	input [3:0] operand1;
+	
+	output greater;
+	output equal;
+	output less;
+	
+	assign greater = ((operand1[3] & ~operand2[3]) | (operand1[2]  &  ~operand2[3]) & (operand1[3] xnor operand2[3])) |
+						  ((operand1[1] & ~operand2[2]) & (operand1[2] xnor operand2[3]) & (operand1[3] xnor operand2[3])) |
+						  ((operand1[1] & ~operand2[2]) & (operand1[1] xnor operand2[2]) & (operand1[2] xnor operand2[3])  & 
+																	 (operand1[3] xnor operand2[3]));
+	
+	assign equal = operand1 xor operand2; 
+	
+	assign less
+
+endmodule 

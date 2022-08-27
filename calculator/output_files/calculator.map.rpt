@@ -1,0 +1,960 @@
+Analysis & Synthesis report for calculator
+Sun May 15 17:30:31 2022
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: four_bit_multiplier:mul
+ 13. Parameter Settings for User Entity Instance: four_bit_divisor:div
+ 14. Parameter Settings for User Entity Instance: four_bit_modulus:mod|four_bit_divisor:div
+ 15. Parameter Settings for User Entity Instance: button_debouncer:db1
+ 16. Parameter Settings for User Entity Instance: button_debouncer:db2
+ 17. Port Connectivity Checks: "button_debouncer:db2"
+ 18. Port Connectivity Checks: "button_debouncer:db1"
+ 19. Port Connectivity Checks: "HEXDRV:hex5s"
+ 20. Port Connectivity Checks: "HEXDRV:hex4s"
+ 21. Port Connectivity Checks: "HEXDRV:hex3s"
+ 22. Port Connectivity Checks: "HEXDRV:hex2s"
+ 23. Port Connectivity Checks: "HEXDRV:hex1s"
+ 24. Port Connectivity Checks: "HEXDRV:hex0s"
+ 25. Port Connectivity Checks: "four_bit_comparator:comp_dec"
+ 26. Port Connectivity Checks: "four_bit_comparator:comp_inc"
+ 27. Port Connectivity Checks: "four_bit_adder_substractor:dec"
+ 28. Port Connectivity Checks: "four_bit_adder_substractor:inc"
+ 29. Port Connectivity Checks: "four_bit_full_rotator:frsh|four_bit_adder_substractor:sub"
+ 30. Port Connectivity Checks: "four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub"
+ 31. Port Connectivity Checks: "four_bit_full_shifter:fsh|four_bit_adder_substractor:sub"
+ 32. Port Connectivity Checks: "four_bit_modulus:mod|four_bit_divisor:div"
+ 33. Port Connectivity Checks: "four_bit_divisor:div|eight_bit_adder_substractor:rem"
+ 34. Port Connectivity Checks: "four_bit_divisor:div|eight_bit_adder_substractor:quo"
+ 35. Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:divr"
+ 36. Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:divd"
+ 37. Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add4"
+ 38. Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add3"
+ 39. Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add2"
+ 40. Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add1"
+ 41. Port Connectivity Checks: "four_bit_multiplier:mul|eight_bit_adder_substractor:fac3"
+ 42. Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:fac2"
+ 43. Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:fac1"
+ 44. Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:add3"
+ 45. Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:add2"
+ 46. Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:add1"
+ 47. Port Connectivity Checks: "four_bit_adder_substractor:add_sub"
+ 48. Post-Synthesis Netlist Statistics for Top Partition
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
+ 51. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun May 15 17:30:31 2022       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; calculator                                  ;
+; Top-level Entity Name              ; DE10_LITE_Golden_Top                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 233                                         ;
+;     Total combinational functions  ; 220                                         ;
+;     Dedicated logic registers      ; 43                                          ;
+; Total registers                    ; 43                                          ;
+; Total pins                         ; 73                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                     ; Setting              ; Default Value      ;
++----------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                     ; 10M50DAF484C7G       ;                    ;
+; Top-level entity name                                                      ; DE10_LITE_Golden_Top ; calculator         ;
+; Family name                                                                ; MAX 10 FPGA          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                        ; All                  ;                    ;
+; Use smart compilation                                                      ; Off                  ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                   ; On                 ;
+; Enable compact report table                                                ; Off                  ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                 ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                  ; Off                ;
+; Preserve fewer node names                                                  ; On                   ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable               ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                 ; Auto               ;
+; Safe State Machine                                                         ; Off                  ; Off                ;
+; Extract Verilog State Machines                                             ; On                   ; On                 ;
+; Extract VHDL State Machines                                                ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                   ; On                 ;
+; Parallel Synthesis                                                         ; On                   ; On                 ;
+; DSP Block Balancing                                                        ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                   ; On                 ;
+; Power-Up Don't Care                                                        ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                 ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                  ; Off                ;
+; Optimization Technique                                                     ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                         ; 70                   ; 70                 ;
+; Auto Carry Chains                                                          ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                  ; Off                ;
+; Auto ROM Replacement                                                       ; On                   ; On                 ;
+; Auto RAM Replacement                                                       ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                   ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                   ; On                 ;
+; Strict RAM Replacement                                                     ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                  ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                   ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                      ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                   ; On                 ;
+; Report Parameter Settings                                                  ; On                   ; On                 ;
+; Report Source Assignments                                                  ; On                   ; On                 ;
+; Report Connectivity Checks                                                 ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                    ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                          ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                  ; 100                ;
+; Clock MUX Protection                                                       ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                  ; Off                ;
+; Block Design Naming                                                        ; Auto                 ; Auto               ;
+; SDC constraint protection                                                  ; Off                  ; Off                ;
+; Synthesis Effort                                                           ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                   ; On                 ;
++----------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++--------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                   ; Library ;
++--------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
+; half_adder.v                         ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/half_adder.v                         ;         ;
+; full_adder.v                         ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/full_adder.v                         ;         ;
+; four_bit_adder_substractor.v         ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_adder_substractor.v         ;         ;
+; four_bit_multiplier.v                ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_multiplier.v                ;         ;
+; eight_bit_adder_substractor.v        ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/eight_bit_adder_substractor.v        ;         ;
+; four_bit_divisor.v                   ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_divisor.v                   ;         ;
+; four_bit_modulus.v                   ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_modulus.v                   ;         ;
+; four_bit_full_shifter.v              ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_full_shifter.v              ;         ;
+; four_bit_shifter.v                   ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_shifter.v                   ;         ;
+; four_bit_comparator.v                ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_comparator.v                ;         ;
+; four_bit_cascading_comparator.v      ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_cascading_comparator.v      ;         ;
+; four_bit_arithmetical_shifter.v      ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_arithmetical_shifter.v      ;         ;
+; four_bit_rotator.v                   ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_rotator.v                   ;         ;
+; four_bit_full_arithmetical_shifter.v ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_full_arithmetical_shifter.v ;         ;
+; four_bit_full_rotator.v              ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/four_bit_full_rotator.v              ;         ;
+; DE10_LITE_Golden_Top.v               ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v               ;         ;
+; HEXDRV.v                             ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/HEXDRV.v                             ;         ;
+; button_debouncer.v                   ; yes             ; User Verilog HDL File  ; E:/quartus_projects/intel_comp/calculator/button_debouncer.v                   ;         ;
++--------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 233         ;
+;                                             ;             ;
+; Total combinational functions               ; 220         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 151         ;
+;     -- 3 input functions                    ; 43          ;
+;     -- <=2 input functions                  ; 26          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 220         ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 43          ;
+;     -- Dedicated logic registers            ; 43          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 73          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[9]~input ;
+; Maximum fan-out                             ; 42          ;
+; Total fan-out                               ; 1051        ;
+; Average fan-out                             ; 2.57        ;
++---------------------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                 ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------+------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                         ; Entity Name                        ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------+------------------------------------+--------------+
+; |DE10_LITE_Golden_Top                        ; 220 (78)            ; 43 (4)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 73   ; 0            ; 0          ; |DE10_LITE_Golden_Top                                                                                       ; DE10_LITE_Golden_Top               ; work         ;
+;    |HEXDRV:hex0s|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|HEXDRV:hex0s                                                                          ; HEXDRV                             ; work         ;
+;    |HEXDRV:hex1s|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|HEXDRV:hex1s                                                                          ; HEXDRV                             ; work         ;
+;    |HEXDRV:hex2s|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|HEXDRV:hex2s                                                                          ; HEXDRV                             ; work         ;
+;    |button_debouncer:db1|                    ; 8 (8)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|button_debouncer:db1                                                                  ; button_debouncer                   ; work         ;
+;    |button_debouncer:db2|                    ; 8 (8)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|button_debouncer:db2                                                                  ; button_debouncer                   ; work         ;
+;    |four_bit_adder_substractor:add_sub|      ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub                                                    ; four_bit_adder_substractor         ; work         ;
+;       |full_adder:fa1|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa1                                     ; full_adder                         ; work         ;
+;       |full_adder:fa2|                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa2                                     ; full_adder                         ; work         ;
+;       |full_adder:fa3|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_adder_substractor:add_sub|full_adder:fa3                                     ; full_adder                         ; work         ;
+;    |four_bit_adder_substractor:dec|          ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_adder_substractor:dec                                                        ; four_bit_adder_substractor         ; work         ;
+;       |full_adder:fa4|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_adder_substractor:dec|full_adder:fa4                                         ; full_adder                         ; work         ;
+;    |four_bit_cascading_comparator:ccpm|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_cascading_comparator:ccpm                                                    ; four_bit_cascading_comparator      ; work         ;
+;    |four_bit_comparator:cmp|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_comparator:cmp                                                               ; four_bit_comparator                ; work         ;
+;    |four_bit_comparator:comp_dec|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_comparator:comp_dec                                                          ; four_bit_comparator                ; work         ;
+;    |four_bit_divisor:div|                    ; 31 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div                                                                  ; four_bit_divisor                   ; work         ;
+;       |eight_bit_adder_substractor:quo|      ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo                                  ; eight_bit_adder_substractor        ; work         ;
+;          |full_adder:fa3|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:quo|full_adder:fa3                   ; full_adder                         ; work         ;
+;       |eight_bit_adder_substractor:rem|      ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem                                  ; eight_bit_adder_substractor        ; work         ;
+;          |full_adder:fa2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa2                   ; full_adder                         ; work         ;
+;          |full_adder:fa3|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|eight_bit_adder_substractor:rem|full_adder:fa3                   ; full_adder                         ; work         ;
+;       |four_bit_adder_substractor:add1|      ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1                                  ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa4|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add1|full_adder:fa4                   ; full_adder                         ; work         ;
+;       |four_bit_adder_substractor:add2|      ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2                                  ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa2                   ; full_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add2|full_adder:fa4                   ; full_adder                         ; work         ;
+;       |four_bit_adder_substractor:add3|      ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3                                  ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa1|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa1                   ; full_adder                         ; work         ;
+;          |full_adder:fa2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa2                   ; full_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add3|full_adder:fa4                   ; full_adder                         ; work         ;
+;       |four_bit_adder_substractor:add4|      ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4                                  ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa1|                    ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa1                   ; full_adder                         ; work         ;
+;             |half_adder:ha|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa1|half_adder:ha     ; half_adder                         ; work         ;
+;          |full_adder:fa2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa2                   ; full_adder                         ; work         ;
+;          |full_adder:fa3|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa3                   ; full_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_divisor:div|four_bit_adder_substractor:add4|full_adder:fa4                   ; full_adder                         ; work         ;
+;    |four_bit_full_arithmetical_shifter:fash| ; 11 (9)              ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash                                               ; four_bit_full_arithmetical_shifter ; work         ;
+;       |four_bit_adder_substractor:sub|       ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub                ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa2 ; full_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub|full_adder:fa4 ; full_adder                         ; work         ;
+;    |four_bit_full_rotator:frsh|              ; 4 (4)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_full_rotator:frsh                                                            ; four_bit_full_rotator              ; work         ;
+;    |four_bit_full_shifter:fsh|               ; 6 (6)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_full_shifter:fsh                                                             ; four_bit_full_shifter              ; work         ;
+;    |four_bit_modulus:mod|                    ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_modulus:mod                                                                  ; four_bit_modulus                   ; work         ;
+;       |four_bit_divisor:div|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_modulus:mod|four_bit_divisor:div                                             ; four_bit_divisor                   ; work         ;
+;    |four_bit_multiplier:mul|                 ; 35 (8)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul                                                               ; four_bit_multiplier                ; work         ;
+;       |eight_bit_adder_substractor:fac3|     ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3                              ; eight_bit_adder_substractor        ; work         ;
+;          |full_adder:fa2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa2               ; full_adder                         ; work         ;
+;          |full_adder:fa3|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa3               ; full_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa4               ; full_adder                         ; work         ;
+;          |full_adder:fa5|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa5               ; full_adder                         ; work         ;
+;          |full_adder:fa6|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|eight_bit_adder_substractor:fac3|full_adder:fa6               ; full_adder                         ; work         ;
+;       |four_bit_adder_substractor:add1|      ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1                               ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa1|                    ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa1                ; full_adder                         ; work         ;
+;             |half_adder:ha|                  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa1|half_adder:ha  ; half_adder                         ; work         ;
+;          |full_adder:fa2|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa2                ; full_adder                         ; work         ;
+;          |full_adder:fa3|                    ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa3                ; full_adder                         ; work         ;
+;             |half_adder:ha|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add1|full_adder:fa3|half_adder:ha  ; half_adder                         ; work         ;
+;       |four_bit_adder_substractor:add2|      ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2                               ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa1|                    ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa1                ; full_adder                         ; work         ;
+;             |half_adder:ha|                  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa1|half_adder:ha  ; half_adder                         ; work         ;
+;          |full_adder:fa2|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa2                ; full_adder                         ; work         ;
+;          |full_adder:fa3|                    ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa3                ; full_adder                         ; work         ;
+;             |half_adder:ha|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa3|half_adder:ha  ; half_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add2|full_adder:fa4                ; full_adder                         ; work         ;
+;       |four_bit_adder_substractor:add3|      ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3                               ; four_bit_adder_substractor         ; work         ;
+;          |full_adder:fa1|                    ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa1                ; full_adder                         ; work         ;
+;             |half_adder:ha|                  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa1|half_adder:ha  ; half_adder                         ; work         ;
+;          |full_adder:fa2|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa2                ; full_adder                         ; work         ;
+;          |full_adder:fa3|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa3                ; full_adder                         ; work         ;
+;          |full_adder:fa4|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_multiplier:mul|four_bit_adder_substractor:add3|full_adder:fa4                ; full_adder                         ; work         ;
+;    |four_bit_shifter:sh|                     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|four_bit_shifter:sh                                                                   ; four_bit_shifter                   ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------+------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++----------------------------------------+----------------------------------------------------------------+
+; Register name                          ; Reason for Removal                                             ;
++----------------------------------------+----------------------------------------------------------------+
+; four_bit_full_rotator:frsh|counter[3]  ; Merged with four_bit_full_arithmetical_shifter:fash|counter[3] ;
+; four_bit_full_shifter:fsh|counter[3]   ; Merged with four_bit_full_arithmetical_shifter:fash|counter[3] ;
+; four_bit_full_rotator:frsh|counter[2]  ; Merged with four_bit_full_arithmetical_shifter:fash|counter[2] ;
+; four_bit_full_shifter:fsh|counter[2]   ; Merged with four_bit_full_arithmetical_shifter:fash|counter[2] ;
+; four_bit_full_rotator:frsh|counter[1]  ; Merged with four_bit_full_arithmetical_shifter:fash|counter[1] ;
+; four_bit_full_shifter:fsh|counter[1]   ; Merged with four_bit_full_arithmetical_shifter:fash|counter[1] ;
+; four_bit_full_rotator:frsh|counter[0]  ; Merged with four_bit_full_arithmetical_shifter:fash|counter[0] ;
+; four_bit_full_shifter:fsh|counter[0]   ; Merged with four_bit_full_arithmetical_shifter:fash|counter[0] ;
+; four_bit_full_rotator:frsh|START       ; Merged with four_bit_full_arithmetical_shifter:fash|START      ;
+; four_bit_full_shifter:fsh|START        ; Merged with four_bit_full_arithmetical_shifter:fash|START      ;
+; Total Number of Removed Registers = 10 ;                                                                ;
++----------------------------------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 43    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 29    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------+
+; Inverted Register Statistics                            ;
++-----------------------------------------------+---------+
+; Inverted Register                             ; Fan out ;
++-----------------------------------------------+---------+
+; four_bit_full_arithmetical_shifter:fash|START ; 17      ;
+; Total number of inverted registers = 1        ;         ;
++-----------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|button_debouncer:db2|counter[0]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|button_debouncer:db1|counter[3]                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|data[0]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|four_bit_full_rotator:frsh|data[2]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|counter[3] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|four_bit_full_arithmetical_shifter:fash|counter[1] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE10_LITE_Golden_Top|hex2s_in[2]                                        ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |DE10_LITE_Golden_Top|Mux3                                               ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |DE10_LITE_Golden_Top|Mux6                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: four_bit_multiplier:mul ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; ZERO_4         ; 0000     ; Unsigned Binary                          ;
+; ZERO_8         ; 00000000 ; Unsigned Binary                          ;
+; SIGN_PLUS      ; 0        ; Unsigned Binary                          ;
+; SIGN_MINUS     ; 1        ; Unsigned Binary                          ;
++----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: four_bit_divisor:div ;
++----------------+----------+---------------------------------------+
+; Parameter Name ; Value    ; Type                                  ;
++----------------+----------+---------------------------------------+
+; ZERO_4         ; 0000     ; Unsigned Binary                       ;
+; ZERO_8         ; 00000000 ; Unsigned Binary                       ;
+; SIGN_PLUS      ; 0        ; Unsigned Binary                       ;
+; SIGN_MINUS     ; 1        ; Unsigned Binary                       ;
++----------------+----------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: four_bit_modulus:mod|four_bit_divisor:div ;
++----------------+----------+------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                       ;
++----------------+----------+------------------------------------------------------------+
+; ZERO_4         ; 0000     ; Unsigned Binary                                            ;
+; ZERO_8         ; 00000000 ; Unsigned Binary                                            ;
+; SIGN_PLUS      ; 0        ; Unsigned Binary                                            ;
+; SIGN_MINUS     ; 1        ; Unsigned Binary                                            ;
++----------------+----------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: button_debouncer:db1 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; MAX_COUNT      ; 16    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: button_debouncer:db2 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; MAX_COUNT      ; 16    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "button_debouncer:db2"                                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; edj  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; rise ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; fall ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "button_debouncer:db1"                                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; edj  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; rise ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; fall ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HEXDRV:hex5s"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; switch      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; segments[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HEXDRV:hex4s"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; switch      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; segments[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HEXDRV:hex3s"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; segments[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HEXDRV:hex2s"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; segments[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HEXDRV:hex1s"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; segments[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HEXDRV:hex0s"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; segments[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_comparator:comp_dec"                                                                                ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; operand2 ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; greater  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; less     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_comparator:comp_inc"                                                                                      ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                  ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; operand2[1..0] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; operand2[3]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; operand2[2]    ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; equal          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; greater        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; less           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_adder_substractor:dec"                                                                                   ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend2[3..1] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; addend2[0]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_adder_substractor:inc"                                                                                   ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend2[3..1] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; addend2[0]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; sign          ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; out           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_full_rotator:frsh|four_bit_adder_substractor:sub"                                                                                                                                ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; addend1       ; Input  ; Warning  ; Input port expression (6 bits) is wider than the input port (4 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; addend2[3..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; addend2[0]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_full_arithmetical_shifter:fash|four_bit_adder_substractor:sub"                                                                                                                   ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; addend1       ; Input  ; Warning  ; Input port expression (6 bits) is wider than the input port (4 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; addend2[3..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; addend2[0]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_full_shifter:fsh|four_bit_adder_substractor:sub"                                                                                                                                 ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; addend1       ; Input  ; Warning  ; Input port expression (6 bits) is wider than the input port (4 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; addend2[3..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; addend2[0]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_modulus:mod|four_bit_divisor:div"                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                      ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
+; remainder ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "remainder[7..4]" have no fanouts ;
+; quotient  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|eight_bit_adder_substractor:rem"                                                             ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1       ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; addend2[7..4] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|eight_bit_adder_substractor:quo"                                                             ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1       ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; addend2[7..4] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:divr"                                                         ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:divd"                                                         ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add4" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; sign ; Input ; Info     ; Stuck at VCC                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add3"                                 ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; sign   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add2"                                 ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; sign   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_divisor:div|four_bit_adder_substractor:add1"                                        ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; addend1[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sign          ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out[3]        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_multiplier:mul|eight_bit_adder_substractor:fac3"                                                     ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:fac2"                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:fac1"                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addend1   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; sign      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; carry_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:add3" ;
++------+-------+----------+-----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                   ;
++------+-------+----------+-----------------------------------------------------------+
+; sign ; Input ; Info     ; Stuck at GND                                              ;
++------+-------+----------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:add2" ;
++------+-------+----------+-----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                   ;
++------+-------+----------+-----------------------------------------------------------+
+; sign ; Input ; Info     ; Stuck at GND                                              ;
++------+-------+----------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_multiplier:mul|four_bit_adder_substractor:add1" ;
++------------+-------+----------+-----------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                             ;
++------------+-------+----------+-----------------------------------------------------+
+; addend1[3] ; Input ; Info     ; Stuck at GND                                        ;
+; sign       ; Input ; Info     ; Stuck at GND                                        ;
++------------+-------+----------+-----------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "four_bit_adder_substractor:add_sub"                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; carry_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 73                          ;
+; cycloneiii_ff         ; 43                          ;
+;     CLR               ; 5                           ;
+;     CLR SLD           ; 2                           ;
+;     ENA               ; 4                           ;
+;     ENA CLR           ; 12                          ;
+;     ENA CLR SLD       ; 10                          ;
+;     plain             ; 10                          ;
+; cycloneiii_lcell_comb ; 227                         ;
+;     normal            ; 227                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 151                         ;
+;                       ;                             ;
+; Max LUT depth         ; 18.00                       ;
+; Average LUT depth     ; 9.33                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Sun May 15 17:30:21 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculator -c calculator
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file half_adder.v
+    Info (12023): Found entity 1: half_adder File: E:/quartus_projects/intel_comp/calculator/half_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder File: E:/quartus_projects/intel_comp/calculator/full_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_adder_substractor.v
+    Info (12023): Found entity 1: four_bit_adder_substractor File: E:/quartus_projects/intel_comp/calculator/four_bit_adder_substractor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_multiplier.v
+    Info (12023): Found entity 1: four_bit_multiplier File: E:/quartus_projects/intel_comp/calculator/four_bit_multiplier.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file eight_bit_adder_substractor.v
+    Info (12023): Found entity 1: eight_bit_adder_substractor File: E:/quartus_projects/intel_comp/calculator/eight_bit_adder_substractor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_divisor.v
+    Info (12023): Found entity 1: four_bit_divisor File: E:/quartus_projects/intel_comp/calculator/four_bit_divisor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_modulus.v
+    Info (12023): Found entity 1: four_bit_modulus File: E:/quartus_projects/intel_comp/calculator/four_bit_modulus.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_full_shifter.v
+    Info (12023): Found entity 1: four_bit_full_shifter File: E:/quartus_projects/intel_comp/calculator/four_bit_full_shifter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_shifter.v
+    Info (12023): Found entity 1: four_bit_shifter File: E:/quartus_projects/intel_comp/calculator/four_bit_shifter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_comparator.v
+    Info (12023): Found entity 1: four_bit_comparator File: E:/quartus_projects/intel_comp/calculator/four_bit_comparator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_cascading_comparator.v
+    Info (12023): Found entity 1: four_bit_cascading_comparator File: E:/quartus_projects/intel_comp/calculator/four_bit_cascading_comparator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_arithmetical_shifter.v
+    Info (12023): Found entity 1: four_bit_arithmetical_shifter File: E:/quartus_projects/intel_comp/calculator/four_bit_arithmetical_shifter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_rotator.v
+    Info (12023): Found entity 1: four_bit_rotator File: E:/quartus_projects/intel_comp/calculator/four_bit_rotator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_full_arithmetical_shifter.v
+    Info (12023): Found entity 1: four_bit_full_arithmetical_shifter File: E:/quartus_projects/intel_comp/calculator/four_bit_full_arithmetical_shifter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_full_rotator.v
+    Info (12023): Found entity 1: four_bit_full_rotator File: E:/quartus_projects/intel_comp/calculator/four_bit_full_rotator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file de10_lite_golden_top.v
+    Info (12023): Found entity 1: DE10_LITE_Golden_Top File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hexdrv.v
+    Info (12023): Found entity 1: HEXDRV File: E:/quartus_projects/intel_comp/calculator/HEXDRV.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file button_debouncer.v
+    Info (12023): Found entity 1: button_debouncer File: E:/quartus_projects/intel_comp/calculator/button_debouncer.v Line: 1
+Info (12127): Elaborating entity "DE10_LITE_Golden_Top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at DE10_LITE_Golden_Top.v(197): truncated value with size 8 to match size of target (7) File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 197
+Warning (10230): Verilog HDL assignment warning at DE10_LITE_Golden_Top.v(198): truncated value with size 8 to match size of target (7) File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 198
+Warning (10230): Verilog HDL assignment warning at DE10_LITE_Golden_Top.v(199): truncated value with size 8 to match size of target (7) File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 199
+Warning (10230): Verilog HDL assignment warning at DE10_LITE_Golden_Top.v(200): truncated value with size 8 to match size of target (7) File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 200
+Warning (10230): Verilog HDL assignment warning at DE10_LITE_Golden_Top.v(201): truncated value with size 8 to match size of target (7) File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 201
+Warning (10230): Verilog HDL assignment warning at DE10_LITE_Golden_Top.v(202): truncated value with size 8 to match size of target (7) File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 202
+Info (12128): Elaborating entity "four_bit_adder_substractor" for hierarchy "four_bit_adder_substractor:add_sub" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 89
+Info (12128): Elaborating entity "full_adder" for hierarchy "four_bit_adder_substractor:add_sub|full_adder:fa1" File: E:/quartus_projects/intel_comp/calculator/four_bit_adder_substractor.v Line: 27
+Info (12128): Elaborating entity "half_adder" for hierarchy "four_bit_adder_substractor:add_sub|full_adder:fa1|half_adder:ha" File: E:/quartus_projects/intel_comp/calculator/full_adder.v Line: 20
+Info (12128): Elaborating entity "four_bit_multiplier" for hierarchy "four_bit_multiplier:mul" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 90
+Info (12128): Elaborating entity "eight_bit_adder_substractor" for hierarchy "four_bit_multiplier:mul|eight_bit_adder_substractor:fac3" File: E:/quartus_projects/intel_comp/calculator/four_bit_multiplier.v Line: 63
+Info (12128): Elaborating entity "four_bit_divisor" for hierarchy "four_bit_divisor:div" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 91
+Info (12128): Elaborating entity "four_bit_modulus" for hierarchy "four_bit_modulus:mod" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 92
+Info (12128): Elaborating entity "four_bit_shifter" for hierarchy "four_bit_shifter:sh" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 93
+Info (12128): Elaborating entity "four_bit_full_shifter" for hierarchy "four_bit_full_shifter:fsh" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 94
+Info (12128): Elaborating entity "four_bit_comparator" for hierarchy "four_bit_comparator:cmp" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 95
+Info (12128): Elaborating entity "four_bit_cascading_comparator" for hierarchy "four_bit_cascading_comparator:ccpm" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 97
+Info (12128): Elaborating entity "four_bit_arithmetical_shifter" for hierarchy "four_bit_arithmetical_shifter:ash" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 98
+Info (12128): Elaborating entity "four_bit_full_arithmetical_shifter" for hierarchy "four_bit_full_arithmetical_shifter:fash" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 99
+Info (12128): Elaborating entity "four_bit_rotator" for hierarchy "four_bit_rotator:rsh" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 100
+Info (12128): Elaborating entity "four_bit_full_rotator" for hierarchy "four_bit_full_rotator:frsh" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 101
+Info (12128): Elaborating entity "HEXDRV" for hierarchy "HEXDRV:hex0s" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 115
+Info (12128): Elaborating entity "button_debouncer" for hierarchy "button_debouncer:db1" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 122
+Warning (10230): Verilog HDL assignment warning at button_debouncer.v(42): truncated value with size 32 to match size of target (4) File: E:/quartus_projects/intel_comp/calculator/button_debouncer.v Line: 42
+Warning (12241): 17 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high File: E:/quartus_projects/intel_comp/calculator/four_bit_full_arithmetical_shifter.v Line: 24
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX3S[1]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 12
+    Warning (13410): Pin "HEX3S[2]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 12
+    Warning (13410): Pin "HEX3S[6]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 12
+    Warning (13410): Pin "HEX4S[0]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX4S[1]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX4S[2]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX4S[3]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX4S[4]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX4S[5]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX4S[6]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 13
+    Warning (13410): Pin "HEX5S[0]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEX5S[1]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEX5S[2]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEX5S[3]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEX5S[4]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEX5S[5]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEX5S[6]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 14
+    Warning (13410): Pin "HEXdp[0]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 15
+    Warning (13410): Pin "HEXdp[1]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 15
+    Warning (13410): Pin "HEXdp[3]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 15
+    Warning (13410): Pin "HEXdp[4]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 15
+    Warning (13410): Pin "HEXdp[5]" is stuck at VCC File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 15
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 21
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 21
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 21
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 21
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 21
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 21
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file E:/quartus_projects/intel_comp/calculator/output_files/calculator.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: E:/quartus_projects/intel_comp/calculator/DE10_LITE_Golden_Top.v Line: 6
+Info (21057): Implemented 306 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 233 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4775 megabytes
+    Info: Processing ended: Sun May 15 17:30:31 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:18
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/quartus_projects/intel_comp/calculator/output_files/calculator.map.smsg.
+
+

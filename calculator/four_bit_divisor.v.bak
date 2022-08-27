@@ -1,0 +1,42 @@
+module four_bit_multiplier(
+	factor1,
+	factor2,
+	out,
+);
+
+	input [3:0] factor1;
+	input [3:0] factor2;
+	
+	output [7:0] out;
+	
+	wire [3:0] fix_factor1;
+	wire [3:0] fix_factor2;
+	wire is_negative;
+	
+	assign fix_factor1 = factor1[3] ? ~factor1 + 4'b1 : factor1;
+	assign fix_factor2 = factor2[3] ? ~factor2 + 4'b1 : factor2;
+	assign is_negative = factor1[3] | factor2[3];
+	
+	wire [3:0] interim1 = fix_factor1 & {4{fix_factor2[0]}};
+	wire [3:0] interim2 = fix_factor1 & {4{fix_factor2[1]}};
+	wire [3:0] interim3 = fix_factor1 & {4{fix_factor2[2]}};
+	wire [3:0] interim4 = fix_factor1 & {4{fix_factor2[3]}};
+	
+	wire [3:0] out1, out2, out3;
+	wire c_out1, c_out2, c_out3;
+	
+	wire [7:0] result;
+	
+	// Used for choosing appropriate mode of four_bit_adder_substractor instances
+	parameter SIGN = 1'b0; 
+	
+		
+	four_bit_adder_substractor add1(.addend1({1'b0, interim1[3:1]}),.addend2(interim2),.sign(SIGN),.out(out1),.carry_out(c_out1));
+	four_bit_adder_substractor add2(.addend1({c_out1, out1[3:1]}),  .addend2(interim3),.sign(SIGN),.out(out2),.carry_out(c_out2));
+	four_bit_adder_substractor add3(.addend1({c_out2, out2[3:1]}),  .addend2(interim4),.sign(SIGN),.out(out3),.carry_out(c_out3));
+	
+	assign result = {c_out3, out3, out2[0], out1[0], interim1[0]};
+	
+	assign out = is_negative ? ~result + 8'b1 : 	result;
+	
+endmodule 
