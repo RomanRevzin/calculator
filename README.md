@@ -1,5 +1,5 @@
 # Calculator Project
-#### This is a small Verilog project for Intel Competition at Ruppin Academic College. We've been asked to design a claculator with basic set of operations(addition, subtraction, multiplication and division) without using in-built Verilog operators.
+#### This is a small Verilog project for Intel Competition at Ruppin Academic College. We've been asked to design a calculator with basic set of operations(addition, subtraction, multiplication and division) without using in-built Verilog operators.
 
 <img src="https://github.com/RomanRevzin/calculator/blob/main/slides/Slide1.PNG">
 
